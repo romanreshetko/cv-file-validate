@@ -15,6 +15,15 @@ func ValidateResume(resume Resume) error {
 	if resume.Initials == "" {
 		validationErrors = append(validationErrors, "missing required field: initials")
 	}
+	if resume.Location == "" {
+		validationErrors = append(validationErrors, "missing required field: location")
+	}
+	if resume.LocationLink == "" {
+		validationErrors = append(validationErrors, "missing required field: location_link")
+	}
+	if resume.AvatarUrl == "" {
+		validationErrors = append(validationErrors, "missing required field: avatar_url")
+	}
 	if resume.Summary == "" {
 		validationErrors = append(validationErrors, "missing required field: summary")
 	}
@@ -26,9 +35,6 @@ func ValidateResume(resume Resume) error {
 	}
 	if resume.Contact.Tel == "" {
 		validationErrors = append(validationErrors, "missing required field: contact.tel")
-	}
-	if len(resume.Education) == 0 {
-		validationErrors = append(validationErrors, "missing required field: education")
 	}
 	for i, edu := range resume.Education {
 		if edu.School == "" {
@@ -56,9 +62,6 @@ func ValidateResume(resume Resume) error {
 		}
 		if job.Start == "" {
 			validationErrors = append(validationErrors, fmt.Sprintf("missing required field: work[%d].start", i))
-		}
-		if job.End == "" {
-			validationErrors = append(validationErrors, fmt.Sprintf("missing required field: work[%d].end", i))
 		}
 		if job.Description == "" {
 			validationErrors = append(validationErrors, fmt.Sprintf("missing required field: work[%d].description", i))

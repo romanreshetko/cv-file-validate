@@ -2,13 +2,13 @@ package models
 
 type Resume struct {
 	Name               string      `yaml:"name"`
-	Initials           string      `yaml:"initials,omitempty"`
-	Location           string      `yaml:"location,omitempty"`
-	LocationLink       string      `yaml:"locationLink,omitempty"`
-	AvatarUrl          string      `yaml:"avatarUrl,omitempty"`
+	Initials           string      `yaml:"initials"`
+	Location           string      `yaml:"location"`
+	LocationLink       string      `yaml:"locationLink"`
+	AvatarUrl          string      `yaml:"avatarUrl"`
 	PersonalWebsiteUrl string      `yaml:"personalWebsiteUrl,omitempty"`
-	Summary            string      `yaml:"summary,omitempty"`
-	About              string      `yaml:"about,omitempty"`
+	Summary            string      `yaml:"summary"`
+	About              string      `yaml:"about"`
 	Contact            Contact     `yaml:"contact"`
 	Skills             []string    `yaml:"skills"`
 	Work               []Work      `yaml:"work"`
@@ -36,8 +36,8 @@ type Education struct {
 
 type Work struct {
 	Company     string   `yaml:"company"`
-	Link        string   `yaml:"link,omitempty"`
-	Badge       []string `yaml:"badge,omitempty"`
+	Link        string   `yaml:"link"`
+	Badge       []string `yaml:"badge"`
 	Title       string   `yaml:"title"`
 	Start       string   `yaml:"start"`
 	End         string   `yaml:"end"`
